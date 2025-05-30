@@ -7,6 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Resource Routes
+Route::resource("blog", \App\Http\Controllers\BlogController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
